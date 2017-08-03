@@ -1,0 +1,498 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar NOT NULL, "city" varchar NOT NULL, "state" varchar NOT NULL, "zip" varchar NOT NULL, "status" varchar DEFAULT 'prospect' NOT NULL, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170801003556)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-08-01 00:50:52.947424"], ["updated_at", "2017-08-01 00:50:52.947424"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "403 Friedrich Estates"], ["city", "Wittingtown"], ["state", "North Dakota"], ["zip", "16852-1989"], ["created_at", "2017-08-01 00:50:53.431156"], ["updated_at", "2017-08-01 00:50:53.431156"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 13.3ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 57ms (Views: 20.2ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 79ms (Views: 17.0ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"address"=>"86208 Rae Skyway", "city"=>"New Scot", "state"=>"Wisconsin", "zip"=>"83120-1300"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 128ms (Views: 36.2ms | ActiveRecord: 3.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"7682 Wiza Junctions", "city"=>"West Caesar", "state"=>"Idaho", "zip"=>"10796-4295"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 38ms (Views: 12.4ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Parameters: {"property"=>{"address"=>"727 Paula Ridges", "city"=>"Estelport", "state"=>"Massachusetts", "zip"=>"94452-3767"}}
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 67ms (Views: 21.1ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 47ms (Views: 10.3ms | ActiveRecord: 3.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 63ms (Views: 16.9ms | ActiveRecord: 3.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"583 Stanton Forges", "city"=>"Doyleburgh", "state"=>"Washington", "zip"=>"95824-3843"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 46ms (Views: 14.0ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"350 Simonis Squares", "city"=>"Hammesfort", "state"=>"Nebraska", "zip"=>"89700-5423"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "350 Simonis Squares"], ["city", "Hammesfort"], ["state", "Nebraska"], ["zip", "89700-5423"], ["created_at", "2017-08-01 00:58:49.330007"], ["updated_at", "2017-08-01 00:58:49.330007"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (2.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 81ms (Views: 22.6ms | ActiveRecord: 2.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"301 Alysha Place", "city"=>"East Manleybury", "state"=>"Louisiana", "zip"=>"42543-9122"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "301 Alysha Place"], ["city", "East Manleybury"], ["state", "Louisiana"], ["zip", "42543-9122"], ["created_at", "2017-08-01 00:59:34.647369"], ["updated_at", "2017-08-01 00:59:34.647369"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 18ms (ActiveRecord: 1.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (5.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "283 Fritsch Flats"], ["city", "Earlenefort"], ["state", "North Carolina"], ["zip", "41221"], ["created_at", "2017-08-01 00:59:34.684059"], ["updated_at", "2017-08-01 00:59:34.684059"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 8.7ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"8711 Rosenbaum Rapid", "city"=>"East Berniemouth", "state"=>"New Jersey", "zip"=>"79767"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "8711 Rosenbaum Rapid"], ["city", "East Berniemouth"], ["state", "New Jersey"], ["zip", "79767"], ["created_at", "2017-08-01 01:00:07.568313"], ["updated_at", "2017-08-01 01:00:07.568313"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (5.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "206 Dickinson Mountains"], ["city", "Port Lavonview"], ["state", "Virginia"], ["zip", "55118-4825"], ["created_at", "2017-08-01 01:00:07.582647"], ["updated_at", "2017-08-01 01:00:07.582647"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/edit.html.erb within layouts/application
+  Rendered properties/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 41ms (Views: 8.8ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"61549 Teresa Groves", "city"=>"Dylanside", "state"=>"Alabama", "zip"=>"41026-4487"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "61549 Teresa Groves"], ["city", "Dylanside"], ["state", "Alabama"], ["zip", "41026-4487"], ["created_at", "2017-08-01 01:00:53.144364"], ["updated_at", "2017-08-01 01:00:53.144364"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (2.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "57151 Ullrich Mountains"], ["city", "New Devin"], ["state", "Washington"], ["zip", "38949-4673"], ["created_at", "2017-08-01 01:00:53.154659"], ["updated_at", "2017-08-01 01:00:53.154659"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 7.6ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"79539 Randal Falls", "city"=>"Kundebury", "state"=>"Nevada", "zip"=>"76737"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "79539 Randal Falls"], ["city", "Kundebury"], ["state", "Nevada"], ["zip", "76737"], ["created_at", "2017-08-01 01:03:39.175163"], ["updated_at", "2017-08-01 01:03:39.175163"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (2.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "4638 Cheyanne Hollow"], ["city", "Audieborough"], ["state", "Alaska"], ["zip", "71441-6281"], ["created_at", "2017-08-01 01:03:39.190285"], ["updated_at", "2017-08-01 01:03:39.190285"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/edit.html.erb within layouts/application
+  Rendered properties/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "65722 Antwan Well"], ["city", "Schultzfurt"], ["state", "New York"], ["zip", "92570-6162"], ["created_at", "2017-08-01 01:03:39.215901"], ["updated_at", "2017-08-01 01:03:39.215901"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#update as HTML
+  Parameters: {"property"=>{"address"=>"79166 Schneider Road", "city"=>"Rodriguezville", "state"=>"South Carolina", "zip"=>"27569-5977"}, "id"=>"1"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "properties" SET "address" = ?, "city" = ?, "state" = ?, "zip" = ?, "updated_at" = ? WHERE "properties"."id" = ?[0m  [["address", "79166 Schneider Road"], ["city", "Rodriguezville"], ["state", "South Carolina"], ["zip", "27569-5977"], ["updated_at", "2017-08-01 01:03:39.222902"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+  [1m[35m (1.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 10.9ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"51621 Gerlach Falls", "city"=>"South Norberto", "state"=>"Arkansas", "zip"=>"74528-5675"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "51621 Gerlach Falls"], ["city", "South Norberto"], ["state", "Arkansas"], ["zip", "74528-5675"], ["created_at", "2017-08-01 01:03:54.179084"], ["updated_at", "2017-08-01 01:03:54.179084"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (5.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "666 Nadia Trafficway"], ["city", "New Sean"], ["state", "Mississippi"], ["zip", "79794-0606"], ["created_at", "2017-08-01 01:03:54.191169"], ["updated_at", "2017-08-01 01:03:54.191169"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/edit.html.erb within layouts/application
+  Rendered properties/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "5748 Fisher Key"], ["city", "North Susan"], ["state", "Iowa"], ["zip", "20557-3009"], ["created_at", "2017-08-01 01:03:54.208038"], ["updated_at", "2017-08-01 01:03:54.208038"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#update as HTML
+  Parameters: {"property"=>{"address"=>"3810 Joaquin Expressway", "city"=>"Swiftview", "state"=>"Utah", "zip"=>"80074"}, "id"=>"1"}
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "properties" SET "address" = ?, "city" = ?, "state" = ?, "zip" = ?, "updated_at" = ? WHERE "properties"."id" = ?[0m  [["address", "3810 Joaquin Expressway"], ["city", "Swiftview"], ["state", "Utah"], ["zip", "80074"], ["updated_at", "2017-08-01 01:03:54.215848"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
+  [1m[35m (1.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 7.0ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"7884 Schimmel Fort", "city"=>"West Deondreport", "state"=>"New York", "zip"=>"71226-3442"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "7884 Schimmel Fort"], ["city", "West Deondreport"], ["state", "New York"], ["zip", "71226-3442"], ["created_at", "2017-08-01 01:04:04.082227"], ["updated_at", "2017-08-01 01:04:04.082227"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (5.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "36811 Waelchi Groves"], ["city", "Hermannborough"], ["state", "Oregon"], ["zip", "88595-6190"], ["created_at", "2017-08-01 01:04:04.098370"], ["updated_at", "2017-08-01 01:04:04.098370"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/edit.html.erb within layouts/application
+  Rendered properties/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "866 Kirlin Plain"], ["city", "Gabriellehaven"], ["state", "Wyoming"], ["zip", "57199"], ["created_at", "2017-08-01 01:04:04.122475"], ["updated_at", "2017-08-01 01:04:04.122475"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#update as HTML
+  Parameters: {"property"=>{"address"=>"335 Mallory Orchard", "city"=>"Eltonmouth", "state"=>"Missouri", "zip"=>"51116-7025"}, "id"=>"1"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "properties" SET "address" = ?, "city" = ?, "state" = ?, "zip" = ?, "updated_at" = ? WHERE "properties"."id" = ?[0m  [["address", "335 Mallory Orchard"], ["city", "Eltonmouth"], ["state", "Missouri"], ["zip", "51116-7025"], ["updated_at", "2017-08-01 01:04:04.128945"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 9.7ms | ActiveRecord: 2.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"987 Adams Springs", "city"=>"Buckridgefort", "state"=>"Hawaii", "zip"=>"38220-1654"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "987 Adams Springs"], ["city", "Buckridgefort"], ["state", "Hawaii"], ["zip", "38220-1654"], ["created_at", "2017-08-01 01:05:08.510702"], ["updated_at", "2017-08-01 01:05:08.510702"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (2.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "787 Considine Forest"], ["city", "Littelside"], ["state", "Minnesota"], ["zip", "88018"], ["created_at", "2017-08-01 01:05:08.519368"], ["updated_at", "2017-08-01 01:05:08.519368"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.3ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/edit.html.erb within layouts/application
+  Rendered properties/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "77539 Greenholt Mountain"], ["city", "Ondrickahaven"], ["state", "Idaho"], ["zip", "74676"], ["created_at", "2017-08-01 01:05:08.536652"], ["updated_at", "2017-08-01 01:05:08.536652"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#update as HTML
+  Parameters: {"property"=>{"address"=>"22206 Estevan Spur", "city"=>"Beckerfort", "state"=>"Arizona", "zip"=>"27322"}, "id"=>"1"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "properties" SET "address" = ?, "city" = ?, "state" = ?, "zip" = ?, "updated_at" = ? WHERE "properties"."id" = ?[0m  [["address", "22206 Estevan Spur"], ["city", "Beckerfort"], ["state", "Arizona"], ["zip", "27322"], ["updated_at", "2017-08-01 01:05:08.546305"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "56358 Mohr Courts"], ["city", "East Rex"], ["state", "Arkansas"], ["zip", "30037-5939"], ["created_at", "2017-08-01 01:05:08.558266"], ["updated_at", "2017-08-01 01:05:08.558266"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/show.html.erb within layouts/application
+  Rendered properties/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 58ms (Views: 23.8ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"5511 Jonathon Extensions", "city"=>"West Floy", "state"=>"Oklahoma", "zip"=>"24355"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "5511 Jonathon Extensions"], ["city", "West Floy"], ["state", "Oklahoma"], ["zip", "24355"], ["created_at", "2017-08-01 01:07:01.540024"], ["updated_at", "2017-08-01 01:07:01.540024"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (5.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "372 Greenholt Crossing"], ["city", "Hermanborough"], ["state", "New Hampshire"], ["zip", "82740-1285"], ["created_at", "2017-08-01 01:07:01.553718"], ["updated_at", "2017-08-01 01:07:01.553718"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.6ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/edit.html.erb within layouts/application
+  Rendered properties/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "345 Williamson Light"], ["city", "North Emmie"], ["state", "Massachusetts"], ["zip", "72626-8811"], ["created_at", "2017-08-01 01:07:01.576009"], ["updated_at", "2017-08-01 01:07:01.576009"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#update as HTML
+  Parameters: {"property"=>{"address"=>"959 Kim Mountains", "city"=>"Earnestineshire", "state"=>"Minnesota", "zip"=>"86554"}, "id"=>"1"}
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "properties" SET "address" = ?, "city" = ?, "state" = ?, "zip" = ?, "updated_at" = ? WHERE "properties"."id" = ?[0m  [["address", "959 Kim Mountains"], ["city", "Earnestineshire"], ["state", "Minnesota"], ["zip", "86554"], ["updated_at", "2017-08-01 01:07:01.587738"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "165 Nienow Ports"], ["city", "South Fannymouth"], ["state", "Utah"], ["zip", "85709-7854"], ["created_at", "2017-08-01 01:07:01.600091"], ["updated_at", "2017-08-01 01:07:01.600091"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/show.html.erb within layouts/application
+  Rendered properties/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "16949 Shannon Trail"], ["city", "Gastonberg"], ["state", "Michigan"], ["zip", "15744-4750"], ["created_at", "2017-08-01 01:07:01.620811"], ["updated_at", "2017-08-01 01:07:01.620811"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 45ms (Views: 8.7ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"193 Vaughn Row", "city"=>"Port Opheliabury", "state"=>"Maine", "zip"=>"54684-1472"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "193 Vaughn Row"], ["city", "Port Opheliabury"], ["state", "Maine"], ["zip", "54684-1472"], ["created_at", "2017-08-01 01:07:19.472325"], ["updated_at", "2017-08-01 01:07:19.472325"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (5.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "57366 Lemke Well"], ["city", "Eichmannbury"], ["state", "South Dakota"], ["zip", "72770-6075"], ["created_at", "2017-08-01 01:07:19.483812"], ["updated_at", "2017-08-01 01:07:19.483812"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.4ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/edit.html.erb within layouts/application
+  Rendered properties/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 12ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "934 Rolfson Groves"], ["city", "West Mosheland"], ["state", "West Virginia"], ["zip", "94502"], ["created_at", "2017-08-01 01:07:19.502491"], ["updated_at", "2017-08-01 01:07:19.502491"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#update as HTML
+  Parameters: {"property"=>{"address"=>"5061 Kunde Forks", "city"=>"South Carmelview", "state"=>"Alaska", "zip"=>"57431"}, "id"=>"1"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "properties" SET "address" = ?, "city" = ?, "state" = ?, "zip" = ?, "updated_at" = ? WHERE "properties"."id" = ?[0m  [["address", "5061 Kunde Forks"], ["city", "South Carmelview"], ["state", "Alaska"], ["zip", "57431"], ["updated_at", "2017-08-01 01:07:19.510610"], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "974 Winston Cove"], ["city", "Mozelletown"], ["state", "Minnesota"], ["zip", "81024"], ["created_at", "2017-08-01 01:07:19.524283"], ["updated_at", "2017-08-01 01:07:19.524283"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/show.html.erb within layouts/application
+  Rendered properties/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "59013 Aimee River"], ["city", "South Revaland"], ["state", "Alabama"], ["zip", "81819"], ["created_at", "2017-08-01 01:07:19.540245"], ["updated_at", "2017-08-01 01:07:19.540245"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "properties" WHERE "properties"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+  [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
