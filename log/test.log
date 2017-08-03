@@ -496,3 +496,474 @@ Redirected to http://test.host/properties
 Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
   [1m[36mProperty Load (0.2ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "properties"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar NOT NULL, "city" varchar NOT NULL, "state" varchar NOT NULL, "zip" varchar NOT NULL, "status" varchar DEFAULT 'prospect' NOT NULL, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170801003556)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-08-03 01:04:54.468568"], ["updated_at", "2017-08-03 01:04:54.468568"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "entries"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "amount" integer, "account" varchar, "description" varchar, "date" date, "property_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_entries_on_property_id" ON "entries" ("property_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "properties"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "properties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar NOT NULL, "city" varchar NOT NULL, "state" varchar NOT NULL, "zip" varchar NOT NULL, "status" varchar DEFAULT 'prospect' NOT NULL, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170803004321)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170801003556);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-08-03 01:06:37.842136"], ["updated_at", "2017-08-03 01:06:37.842136"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:06:37.921791"], ["updated_at", "2017-08-03 01:06:37.921791"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  Rendered entries/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:06:37.947330"], ["updated_at", "2017-08-03 01:06:37.947330"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EntriesController#new as HTML
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:06:37.966829"], ["updated_at", "2017-08-03 01:06:37.966829"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering entries/edit.html.erb within layouts/application
+  Rendered entries/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "entries"[0m
+Processing by EntriesController#create as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:06:37.993771"], ["updated_at", "2017-08-03 01:06:37.993771"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "entries"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EntriesController#create as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:06:38.001120"], ["updated_at", "2017-08-03 01:06:38.001120"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EntriesController#create as HTML
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:06:38.009421"], ["updated_at", "2017-08-03 01:06:38.009421"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" ORDER BY "entries"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:06:38.019497"], ["updated_at", "2017-08-03 01:06:38.019497"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#update as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:06:38.035868"], ["updated_at", "2017-08-03 01:06:38.035868"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#update as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:06:38.042187"], ["updated_at", "2017-08-03 01:06:38.042187"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "entries"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:06:38.047034"], ["updated_at", "2017-08-03 01:06:38.047034"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "entries"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:06:38.068570"], ["updated_at", "2017-08-03 01:06:38.068570"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"401 Janet Ports", "city"=>"Harrisport", "state"=>"Florida", "zip"=>"52485-3456"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "401 Janet Ports"], ["city", "Harrisport"], ["state", "Florida"], ["zip", "52485-3456"], ["created_at", "2017-08-03 01:06:38.484261"], ["updated_at", "2017-08-03 01:06:38.484261"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "4743 Orval Hollow"], ["city", "Georgettemouth"], ["state", "Maryland"], ["zip", "71961"], ["created_at", "2017-08-03 01:06:38.488659"], ["updated_at", "2017-08-03 01:06:38.488659"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/edit.html.erb within layouts/application
+  Rendered properties/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "700 Gusikowski Drive"], ["city", "Lilyville"], ["state", "Ohio"], ["zip", "66358"], ["created_at", "2017-08-03 01:06:38.496019"], ["updated_at", "2017-08-03 01:06:38.496019"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#update as HTML
+  Parameters: {"property"=>{"address"=>"25400 Daniel Station", "city"=>"Port Roma", "state"=>"Indiana", "zip"=>"39489-9240"}, "id"=>"1"}
+  [1m[36mProperty Load (0.0ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "properties" SET "address" = ?, "city" = ?, "state" = ?, "zip" = ?, "updated_at" = ? WHERE "properties"."id" = ?[0m  [["address", "25400 Daniel Station"], ["city", "Port Roma"], ["state", "Indiana"], ["zip", "39489-9240"], ["updated_at", "2017-08-03 01:06:38.499772"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "12048 Theron Court"], ["city", "North Websterhaven"], ["state", "Tennessee"], ["zip", "42111-4551"], ["created_at", "2017-08-03 01:06:38.504636"], ["updated_at", "2017-08-03 01:06:38.504636"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/show.html.erb within layouts/application
+  Rendered properties/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "2543 Rebekah Springs"], ["city", "Bernhardfort"], ["state", "Montana"], ["zip", "24964-7242"], ["created_at", "2017-08-03 01:06:38.512213"], ["updated_at", "2017-08-03 01:06:38.512213"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "properties" WHERE "properties"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "76185 Romaguera Bypass"], ["city", "Port Ora"], ["state", "Georgia"], ["zip", "84274"], ["created_at", "2017-08-03 01:06:38.520760"], ["updated_at", "2017-08-03 01:06:38.520760"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/entries" for 127.0.0.1 at 2017-08-02 21:06:38 -0400
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  Rendered entries/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 241ms (Views: 233.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.426624"], ["updated_at", "2017-08-03 01:09:07.426624"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  Rendered entries/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.444072"], ["updated_at", "2017-08-03 01:09:07.444072"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by EntriesController#new as HTML
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.459574"], ["updated_at", "2017-08-03 01:09:07.459574"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering entries/edit.html.erb within layouts/application
+  Rendered entries/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "entries"[0m
+Processing by EntriesController#create as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.474975"], ["updated_at", "2017-08-03 01:09:07.474975"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "entries"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EntriesController#create as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.480715"], ["updated_at", "2017-08-03 01:09:07.480715"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EntriesController#create as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.486545"], ["updated_at", "2017-08-03 01:09:07.486545"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" ORDER BY "entries"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by EntriesController#create as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.494233"], ["updated_at", "2017-08-03 01:09:07.494233"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.498360"], ["updated_at", "2017-08-03 01:09:07.498360"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#update as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.505622"], ["updated_at", "2017-08-03 01:09:07.505622"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#update as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.512887"], ["updated_at", "2017-08-03 01:09:07.512887"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#update as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.519491"], ["updated_at", "2017-08-03 01:09:07.519491"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#update as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "entries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-08-03 01:09:07.525746"], ["updated_at", "2017-08-03 01:09:07.525746"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#new as HTML
+  Rendering properties/new.html.erb within layouts/application
+  Rendered properties/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by PropertiesController#create as HTML
+  Parameters: {"property"=>{"address"=>"24329 Julius Shoals", "city"=>"Bridgetteland", "state"=>"Georgia", "zip"=>"27488-9497"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "24329 Julius Shoals"], ["city", "Bridgetteland"], ["state", "Georgia"], ["zip", "27488-9497"], ["created_at", "2017-08-03 01:09:07.918396"], ["updated_at", "2017-08-03 01:09:07.918396"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "properties"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "597 Wolff Hollow"], ["city", "Port Earline"], ["state", "Louisiana"], ["zip", "72887"], ["created_at", "2017-08-03 01:09:07.923531"], ["updated_at", "2017-08-03 01:09:07.923531"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/edit.html.erb within layouts/application
+  Rendered properties/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "2371 Carter Cliffs"], ["city", "Lakinbury"], ["state", "West Virginia"], ["zip", "34972-6862"], ["created_at", "2017-08-03 01:09:07.931706"], ["updated_at", "2017-08-03 01:09:07.931706"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#update as HTML
+  Parameters: {"property"=>{"address"=>"49257 Veronica Forest", "city"=>"East Clevelandburgh", "state"=>"Delaware", "zip"=>"46957"}, "id"=>"1"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "properties" SET "address" = ?, "city" = ?, "state" = ?, "zip" = ?, "updated_at" = ? WHERE "properties"."id" = ?[0m  [["address", "49257 Veronica Forest"], ["city", "East Clevelandburgh"], ["state", "Delaware"], ["zip", "46957"], ["updated_at", "2017-08-03 01:09:07.935369"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "85860 Kautzer Center"], ["city", "Metzmouth"], ["state", "Nevada"], ["zip", "95659"], ["created_at", "2017-08-03 01:09:07.940461"], ["updated_at", "2017-08-03 01:09:07.940461"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering properties/show.html.erb within layouts/application
+  Rendered properties/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "38296 Micheal Rest"], ["city", "South Kiarabury"], ["state", "North Dakota"], ["zip", "93782"], ["created_at", "2017-08-03 01:09:07.949491"], ["updated_at", "2017-08-03 01:09:07.949491"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by PropertiesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "properties" WHERE "properties"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/properties
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[36mProperty Load (0.1ms)[0m  [1m[34mSELECT  "properties".* FROM "properties" WHERE "properties"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "properties" ("address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["address", "85969 Juana Path"], ["city", "North Simone"], ["state", "New York"], ["zip", "67959-7208"], ["created_at", "2017-08-03 01:09:07.957874"], ["updated_at", "2017-08-03 01:09:07.957874"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/entries" for 127.0.0.1 at 2017-08-02 21:09:08 -0400
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  Rendered entries/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 154ms (Views: 146.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
